@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Crear Horario
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <div class="form-group">
+                <label>Fecha Desde</label>
+                <select name="dateFrom" [(ngModel)]="selectedFirstDate" id="" class="form-control">
+                  <option *ngFor="let day of weekDays" [value]="day.name">
+                    <span>{{ day.name }}</span>
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="form-group">
+                <label>Fecha Hasta</label>
+                <select name="dateTo" [(ngModel)]="selectedLastDay" id="" class="form-control">
+                  <option *ngFor="let day of weekDays" [value]="day.name">
+                    <span>{{ day.name }}</span>
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Orden de la habitaciones</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="order"
+                  [(ngModel)]="bedroomsOrder"
+                  placeholder="Example: A, D, C"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="offset-9 col-md-1 text-right">
+            <button class="btn btn-outline-danger" (click)="cancel()">
+              Cancelar
+            </button>
+          </div>
+          <div class="col-md-1 text-right">
+            <button class="btn btn-outline-info" (click)="save()">
+              Guardar
+            </button>
+          </div>
+          <div class="col-md-1 text-right">
+            <button class="btn btn-info text-white" (click)="saveAndSend()">
+              Guardar y Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

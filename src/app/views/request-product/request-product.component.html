@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-10 offset-1">
+    <div class="card">
+      <div class="card-header">
+        Escribe la peticion del producto
+      </div>
+      <div class="card-body">
+        <form action="">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Detalle del Producto</label>
+                <textarea
+                  name="product_detail"
+                  id=""
+                  rows="3"
+                  class="form-control"
+                  placeholder="Describe lo que necesitas"
+                  [(ngModel)]="productDetail"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col-md-12 text-right">
+            <button class="btn btn-outline-info btn-lg" (click)="createObjectResquest()">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

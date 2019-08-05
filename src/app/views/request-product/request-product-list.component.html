@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Lista de los productos solicitados.
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+              <label>Fecha desde</label>
+              <input type="date" class="form-control" name="dateFrom" [(ngModel)]="dateFrom"/>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+              <label>Fecha hasta</label>
+              <input type="date" class="form-control" name="dateTo" [(ngModel)]="dateTo" />
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <button class="btn btn-outline-info" (click)="filterByDate()">
+              <i class="fa fa-filter"></i> Filtrar
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Residente</th>
+                    <th>Detalle del producto</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let objectRequest of objectRequestList">
+                    <td>
+                      {{ objectRequest?.GiveResident?.first_name }}
+                    </td>
+                    <td>
+                      {{ objectRequest.product_detail }}
+                    </td>
+                    <td>
+                      <button *ngIf="currentId != objectRequest?.GiveResidentId"
+                            class="btn btn-success" (click)="acceptObjectRequest(objectRequest.objectrequest_id)">
+                        <i class="fa fa-check-circle-o  fa-lg"></i> Aceptar
+                      </button>
+                      <button *ngIf="currentId == objectRequest?.GiveResidentId" class="btn btn-danger"
+                        (click)="cancelObjectRequest(objectRequest.objectrequest_id)">
+                        <i class="fa fa-times-circle-o fa-lg"></i> Cancelar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
