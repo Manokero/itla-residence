@@ -9,6 +9,7 @@
     "start": "ng serve",
     "start:proxy": "ng serve  --proxy-config proxyconfig.json",
     "build": "ng build --prod",
+    "build-gh": "ng build --prod ---base-href https://manokero.github.io/itla-residence/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

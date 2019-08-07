@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
     let data = {
       'username': this.email,
       'password': this.password
-    }
+    };
+
     this.loginService.login(data).subscribe((result) => {
       if(result.success) {
-        localStorage.setItem('access_token', JSON.stringify({'token': result.token}))
-        localStorage.setItem('user', JSON.stringify({ 'id': result.user_id }))
+        localStorage.setItem('access_token', JSON.stringify({'token': result.token}));
+        localStorage.setItem('user', JSON.stringify({ 'id': result.user_id }));
         this.route.navigate(['/'])
       }
       console.log(result.message);
